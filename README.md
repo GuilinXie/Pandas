@@ -68,7 +68,14 @@ loc works based on labels
     df.dropna()  # drop row with any null
     df.dropna(how="all", axis=0,inplace=False) # drop row with all value of null
     df.fillna({1:"fill_null_1",2:"fill_null_2"}) # fill 1st column, 2nd column with specified values
-    df.fillna(method="ffill")
-    
+    df.fillna(method="ffill")    
+ ### 2.9 Pandas tricks 
+ (refer:https://gdcoder.com/be-a-more-efficient-data-scientist-by-using-these-pandas-tricks/)
+#### 2.7.1 fix messy dataframe column names
+df.columns = df.columns.str.strip().str.lower().str.replace(' ', '_').str.replace('(', '').str.replace(')', '')
+eg:
+s = "Sales (Dollars)'
+result: sales_dollars
+
 
 
