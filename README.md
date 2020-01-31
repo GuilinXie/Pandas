@@ -73,6 +73,7 @@ loc works based on labels
  (refer:https://gdcoder.com/be-a-more-efficient-data-scientist-by-using-these-pandas-tricks/)
 #### 2.7.1 fix messy dataframe column names
 df.columns = df.columns.str.strip().str.lower().str.replace(' ', '_').str.replace('(', '').str.replace(')', '')
+
 eg:
 s = "Sales (Dollars)'
 result: sales_dollars
