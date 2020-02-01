@@ -69,23 +69,29 @@ loc works based on labels
     df.dropna(how="all", axis=0,inplace=False) # drop row with all value of null
     df.fillna({1:"fill_null_1",2:"fill_null_2"}) # fill 1st column, 2nd column with specified values
     df.fillna(method="ffill")    
+    
  ### 2.9 Pandas tricks 
  (refer:https://gdcoder.com/be-a-more-efficient-data-scientist-by-using-these-pandas-tricks/)
+ 
 #### 2.9.1 fix messy dataframe column names
 df.columns = df.columns.str.strip().str.lower().str.replace(' ', '_').str.replace('(', '').str.replace(')', '')
 
 eg:
 s = "Sales (Dollars)'
 result: sales_dollars
+
 #### 2.9.2 Remove Outliers
 train.loc[train[col_name] < np.percentile(train[col_name],95)]
 train.loc[train[col_name] > np.percentile(train[col_name],5)]
+
 #### 2.9.3 Skip first n rows
 df = pd.read_csv('file_name.csv',skiprows=10, header=None)
+
 #### 2.9.4 Left merge with indicator
 l = pd.DataFrame({"id": [1,2,3,4,5], "value": [10,20,30,40,50]})
 r = pd.DataFrame({"id":[6,2,3,4,7], "value": [100,200, 300, 400, 5]})
 pd.merge(l, r, how="outer", on="id", suffixes=("_left","_right"),indicator=True)
+
 #### 2.9.5 Compress & Save Pandas Dataframe
 df.to_csv("dataset.csv", index=False)
 df.to_csv("dataset.gz", compression="gzip", index=False)
