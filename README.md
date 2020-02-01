@@ -88,6 +88,7 @@ train.loc[train[col_name] > np.percentile(train[col_name],5)]
 df = pd.read_csv('file_name.csv',skiprows=10, header=None)
 
 #### 2.9.4 Left merge with indicator
+
 l = pd.DataFrame({"id": [1,2,3,4,5], "value": [10,20,30,40,50]})
 r = pd.DataFrame({"id":[6,2,3,4,7], "value": [100,200, 300, 400, 5]})
 pd.merge(l, r, how="outer", on="id", suffixes=("_left","_right"),indicator=True)
