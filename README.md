@@ -98,3 +98,19 @@ df.to_csv("dataset.csv", index=False)
 df.to_csv("dataset.gz", compression="gzip", index=False)
 df = pd.read_csv("dataset.gz")
 
+### 2.10.0 Extract Date Features from dates
+```
+// transfer date from 2018.03.01 to 2018-03-01
+// import datetime
+// X.date=X.date.apply(lambda x:datetime.datetime.strptime(x, '%d.%m.%Y'))
+// transfer to pd datetime, then could use the following functions to extract date features
+
+X['Date'] = pd.to_datetime(X['Date'])
+
+X['Year'] = X.Date.dt.year
+X['Month'] = X.Date.dt.month
+// X['Month'] = X['Date'].apply(lambda x:x.strftime('%m'))
+X['Day'] = X.Date.dt.day
+X['DayOfWeek'] = X.Date.dt.dayofweek
+X['WeekOfYear'] = X.Date.dt.weekofyear
+```
