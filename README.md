@@ -1,4 +1,4 @@
-# Learn Pandas to manipulate numerical, categorical, and time series data.
+## Learn Pandas to manipulate numerical, categorical, and time series data.
 
 Reference:
 1. https://github.com/CoreyMSchafer/code_snippets/tree/master/Python/Pandas
